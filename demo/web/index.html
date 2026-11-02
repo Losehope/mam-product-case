@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAM · 观影团物料申领平台（产品原型）</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">MAM</span>
+    <span class="sub">观影团物料申领 · 产品原型</span>
+  </div>
+  <div class="who">
+    <label>当前身份
+      <select id="user-select"></select>
+    </label>
+    <span id="role-badge" class="badge"></span>
+  </div>
+</header>
+
+<nav id="tabs" class="tabs"></nav>
+<main id="view" class="view"></main>
+<div id="modal" class="modal hidden"></div>
+
+<footer class="foot">
+  演示数据每次启动重建 · 技术栈刻意简化（Python 标准库 + 原生 JS）· 规则说明见
+  <code>docs/02-方案与流程.md</code>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

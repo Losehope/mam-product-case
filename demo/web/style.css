@@ -1,0 +1,92 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #fff;
+  --ink: #1f2328;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #2f6fed;
+  --ok: #0f7b4f;
+  --warn: #b45309;
+  --bad: #b91c1c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.6 -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 24px; background: #fff; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; letter-spacing: 1px; font-size: 18px; color: var(--accent); }
+.sub { color: var(--muted); font-size: 13px; }
+.who { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.who select { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 999px;
+  font-size: 12px; background: #eef2ff; color: var(--accent);
+}
+.tabs { display: flex; gap: 4px; padding: 10px 24px 0; flex-wrap: wrap; }
+.tabs button {
+  border: 0; background: transparent; padding: 8px 14px; border-radius: 8px 8px 0 0;
+  color: var(--muted); cursor: pointer; font-size: 14px;
+}
+.tabs button.active { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 -1px 0 var(--line) inset; }
+.view { padding: 20px 24px 40px; max-width: 1120px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 16px 18px; margin-bottom: 14px;
+}
+.card h3 { margin: 0 0 6px; font-size: 15px; }
+.card .meta { color: var(--muted); font-size: 13px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.spread { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; background: #fafbfc; }
+tr:last-child td { border-bottom: 0; }
+button.primary, button.ghost, button.danger, button.ok {
+  border: 1px solid transparent; border-radius: 7px; padding: 6px 12px;
+  cursor: pointer; font-size: 13px; background: #fff;
+}
+button.primary { background: var(--accent); color: #fff; }
+button.ok { background: var(--ok); color: #fff; }
+button.danger { background: #fff; color: var(--bad); border-color: #fecaca; }
+button.ghost { border-color: var(--line); color: var(--ink); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+input[type=text], input[type=number], input[type=datetime-local], select, textarea {
+  width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 7px;
+  font: inherit; color: var(--ink); background: #fff;
+}
+label.field { display: block; margin-bottom: 10px; }
+label.field span { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.tag { font-size: 11px; padding: 1px 6px; border-radius: 4px; background: #f3f4f6; color: var(--muted); margin-left: 6px; }
+.st-pending { color: var(--warn); }
+.st-approved, .st-shipped { color: var(--accent); }
+.st-completed { color: var(--ok); }
+.st-rejected, .st-cancelled { color: var(--bad); }
+.st-feedback { color: #7c3aed; }
+.hint { color: var(--muted); font-size: 12px; }
+.empty { color: var(--muted); text-align: center; padding: 28px 0; }
+.err { color: var(--bad); font-size: 13px; margin-top: 8px; white-space: pre-wrap; }
+.modal {
+  position: fixed; inset: 0; background: rgba(17, 24, 39, .45);
+  display: flex; align-items: center; justify-content: center; padding: 24px; z-index: 50;
+}
+.modal.hidden { display: none; }
+.modal .sheet {
+  background: #fff; border-radius: 12px; width: min(640px, 100%);
+  max-height: 86vh; overflow: auto; padding: 20px 22px;
+}
+.modal h3 { margin-top: 0; }
+.foot { padding: 16px 24px 40px; color: var(--muted); font-size: 12px; }
+code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; }
+.funnel { display: flex; gap: 8px; flex-wrap: wrap; }
+.funnel div { flex: 1; min-width: 120px; background: #fafbfc; border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.funnel b { display: block; font-size: 22px; }
+.badge.neutral { background: #f3f4f6; color: #4b5563; }
